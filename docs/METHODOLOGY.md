@@ -1,41 +1,57 @@
-# Methodology — rubric and evidence
+# JobMatch AI — Methodology / Metodología
 
-## Evidence states
+**Applies to:** [master prompt v1.3.0](../prompts/JOBMATCH_MASTER_v1.3.0.md) · [original v1.2.0](../prompts/PROMPT_MAESTRO_JOB_MATCH_ANALYZER_v1.2.0.md)
 
-| State | Initial coverage |
+## 1. Evidence and coverage
+
+The source CV, verifiable candidate clarifications and documents actually examined take priority over model assumptions. Do not transfer facts between candidates or infer missing credentials.
+
+| Evidence state | Reference coverage |
 |---|---:|
-| Acreditado | 100% |
-| Equivalente | 75% |
-| Parcial | 40% |
-| No acreditado | 0% |
-| Incompatible | 0% |
+| Acreditado / supported | 100% |
+| Equivalente / equivalent | 75% |
+| Parcial / partial | 40% |
+| No acreditado / unverified | 0% |
+| Incompatible / incompatible | 0% |
 
-These are specification defaults, **not calibrated probabilities**. Adjustments require documented reasoning.
+These are **specified heuristics** rather than externally calibrated measurements. Any justified exception must be explicit. Unverified does not necessarily mean the person lacks the skill.
 
-## Professional fit weighting
+## 2. Professional fit dimensions
 
-- Mandatory technologies and knowledge: 30%
-- Professional experience and seniority: 20%
-- Architecture, methodology and quality: 15%
-- Functional responsibilities: 15%
-- Complementary requirements: 10%
-- Languages and communication: 5%
-- Training and certifications: 5%
+| Dimension | Weight |
+|---|---:|
+| Mandatory technical knowledge | 30% |
+| Experience and seniority | 20% |
+| Architecture, methods and quality | 15% |
+| Functional responsibilities | 15% |
+| Complementary requirements | 10% |
+| Languages and communication | 5% |
+| Training and certifications | 5% |
+| **Total** | **100%** |
 
-Non-applicable dimensions are redistributed with an explanation. Disqualifiers are assessed separately and never concealed by a favorable average.
+Classify each vacancy requirement before assessing evidence. Interpret `A or B` as a genuine alternative unless the posting explicitly requires both. Explain any redistribution of non-applicable categories. Do not conceal missing non-negotiable criteria within a favorable average.
 
-## ATS-document estimate
+## 3. ATS-document compatibility is separate
 
-`ATS = 0.85 * semantic_fit + 0.15 * structural_readability`
+```text
+estimated_ats_document_fit =
+    0.85 × semantic_fit + 0.15 × structural_readability
+```
 
-Semantic subweights: requirements/terms 25%; contextual evidence 25%; role/history clarity 20%; appropriate offer terminology 20%; projects and verifiable references 10%.
+The semantic dimension is specified as requirements/terms (25%), evidence in context (25%), role/history clarity (20%), correct vacancy terminology (20%) and verifiable projects/references (10%). These internal weights do **not** reproduce a vendor's proprietary algorithm.
 
-This is an **internal editorial rubric**; it does not model any specific employer's ATS. Do not report untested extraction as verified.
+Formatting or keyword changes can improve an internal document estimate, **not** professional fit without new evidence. An inaccessible vacancy is insufficient for a definitive match score.
 
-## Provenance invariant
+## 4. Provenance and quality gates
 
-An assertion derived solely from a prior LLM response or inference must never be promoted to verified work experience. A CV may contain only attributable, appropriately scoped candidate claims. Preserve a separate private register of evidence and unresolved questions.
+- **Claim gate:** no employer, certification, achievement, tool or tenure without defensible evidence.
+- **Review gate:** highlight uncertainty, alternatives and exclusions; no false precision about actual hiring chances.
+- **Authorization gate:** do not create a tailored CV without explicit permission.
+- **Persistence gate:** claim saved or updated files only after successful write and inspection.
+- **Deliverable gate:** verify factual content, extractable text, layout and links *if supported*; disclose missing checks.
 
-## Evaluation requirements
+## 5. Evaluation protocol (not yet executed)
 
-Before stating that a case passes, publish actual inputs, expected observable outputs, model/version/date, assessment rubric, observed outputs and reviewer decisions. Fixtures in `examples/` are illustrative, not performance measurements.
+To evaluate reliability: pin the exact prompt revision, model name/version, date, settings, input fixture and expected invariants; save actual outputs with sensitive content removed; have a reviewer mark pass/fail with evidence and repeat for stability. Record failures, disagreements and corrections. The four [fixtures](../examples/README.md) define **expected results** only; no measured pass rate exists.
+
+**Important:** neither professional-fit nor ATS-document values are empirical hiring probabilities, employer ATS results, or independently validated predictions.
