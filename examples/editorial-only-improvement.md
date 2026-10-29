@@ -1,13 +1,31 @@
-# Synthetic fixture: editorial change
+# Synthetic fixture 03 — Editorial-only improvement
 
-**Initial fictitious CV:** PHP APIs, Docker and testing are evidenced in projects but written in vague terminology.
+**Status:** expected-behavior specification, **not executed**. The scenario is fictional.
 
-**Edited fictitious CV:** The same truthful evidence is reorganized into readable role descriptions with matching terminology.
+## Source evidence
 
-## Expected behavior
+> Two years implementing PHP APIs, automated testing and Docker-based workflows.
 
-- Professional fit remains unchanged absent new evidence.
-- ATS-document visibility may improve if justified by the documented rubric.
-- Do not claim improved actual hiring odds, actual ATS score or parsing verification without an exported, tested file.
+## Initial CV
 
-**Validation status:** expected behavior specified; no model execution result is recorded.
+> Worked on backend systems and team tasks.
+
+## Editorial revision
+
+> Developed PHP REST APIs; implemented automated tests; worked with Docker containers.
+
+The revision merely expresses already supported experience more clearly; it **does not add new evidence**.
+
+## Expected invariants
+
+- **Professional-fit assessment must stay unchanged** when factual evidence is unchanged.
+- Internal ATS-document compatibility **may** improve when semantic visibility or structural clarity improves; rationale and rubric must be explicit.
+- The model must not claim a real employer ATS parsed the revised CV unless that happened.
+- Do not invent achievements, business outcomes, roles or technology depth.
+- Generate a final adapted CV only after separate permission.
+
+## Record of execution
+
+**Not executed.** No measured uplift or external ATS result exists.
+
+[Fixture index](README.md) · [Methodology](../docs/METHODOLOGY.md).
