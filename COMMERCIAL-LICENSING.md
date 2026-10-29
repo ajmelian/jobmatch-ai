@@ -1,19 +1,25 @@
-# Commercial licensing / Licencias comerciales
+# JobMatch AI — Commercial Licensing / Licencias comerciales
 
-JobMatch AI's original prompts and textual documentation are released under **CC BY-NC 4.0** for uses within the scope of that license.
+**Rights holder / Titular:** Aythami Melián Perdomo · **Contact / Contacto:** ajmelper@gmail.com
 
-## Commercial use
+## English
 
-The public CC BY-NC 4.0 grant does not authorize uses primarily intended for commercial advantage or monetary compensation. This includes business scenarios that may require a separate license. Whether a specific use is non-commercial depends on the applicable license definition and context, not solely on an organization's legal status.
+The original JobMatch AI prompts and documents are publicly available under **CC BY-NC 4.0**. Uses not permitted by that license may require a **separate written commercial authorization**, granted on individually agreed terms.
 
-For authorization to integrate, redistribute or deploy these licensed materials commercially, contact:
+Potential scenarios to discuss include embedding the licensed materials in paid recruitment or career services, distributing them within a commercial product, or using them for other commercial purposes. The legal meaning of **NonCommercial** depends on the specific use, not solely on whether a person or organization earns revenue.
 
-**Aythami Melián Perdomo** — ajmelper@gmail.com
+To request authorization, describe the intended deployment, distribution, audience and proposed business model. No price, license grant, warranty, service level or support commitment is implied by this repository.
 
-No commercial license, paid support, service-level commitment or warranty is included with the public repository.
+## Español
 
-## Licenciamiento comercial
+Los prompts y documentos originales de JobMatch AI son públicos bajo **CC BY-NC 4.0**. Los usos no autorizados por esta licencia requieren, cuando corresponda, una **autorización comercial independiente y por escrito**.
 
-Los prompts originales y documentos propios se publican bajo **CC BY-NC 4.0**. Las empresas y profesionales que necesiten un uso no cubierto por esa licencia pueden solicitar condiciones comerciales independientes escribiendo a **ajmelper@gmail.com**.
+Entre las aplicaciones que pueden plantearse están la integración en servicios de selección de pago, su distribución como parte de un producto o la explotación empresarial del material licenciado. Que una entidad sea una empresa no resuelve por sí solo si un uso concreto cumple la definición legal de *NoComercial*.
 
-La publicación de las instrucciones no concede exclusividad sobre ideas, métodos abstractos, denominaciones de terceros ni derechos ajenos. Consulta siempre el texto legal oficial de Creative Commons.
+Para solicitar condiciones comerciales, escribe a **ajmelper@gmail.com** e indica el uso previsto, la forma de distribución, los destinatarios y el modelo de negocio. No existe una tarifa pública ni se presume ninguna licencia comercial concedida.
+
+## Legal boundary / Alcance
+
+The license governs rights in eligible original expressive materials; it does not create monopoly rights in general ideas, scoring principles, abstract methods or third-party content.
+
+[License details](LICENSE.md) · [Official legal code](https://creativecommons.org/licenses/by-nc/4.0/legalcode).
