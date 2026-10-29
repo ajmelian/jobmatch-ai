@@ -1,30 +1,55 @@
-# JobMatch AI — Usage guide / Guía de uso
+# JobMatch AI — User Guide / Manual de uso
 
-## Inputs / Entradas
+[English README](../README.md) · [README en español](../README.es.md)
 
-- A complete job advertisement (preferably its full text, or an accessible public URL).
-- A current master CV in structured Markdown.
-- Optional factual clarifications and technical artifacts that can actually be examined.
+## 1. Choose a version / Elige una versión
 
-Do **not** supply credentials, sensitive identifiers, confidential employer documents or other material you lack permission to process.
+- [v1.2.0 — Original](../prompts/PROMPT_MAESTRO_JOB_MATCH_ANALYZER_v1.2.0.md): historic Spanish baseline, preserved.
+- [v1.3.0 — Candidate-neutral draft](../prompts/JOBMATCH_MASTER_v1.3.0.md): public parametrized instructions, **under review** in [PR #1](https://github.com/ajmelian/jobmatch-ai/pull/1).
 
-## Workflow / Flujo
+Both are instructions for an LLM, **not** stand-alone executable software.
 
-1. Read the full offer and master CV.
-2. Extract and classify requirements, distinguishing explicit conditions from inferred ones.
-3. Map each requirement to a source and to an evidence status.
-4. Calculate separate, documented estimates for professional fit and ATS-document compatibility.
-5. Detect material uncertainties and ask targeted questions; do not treat silence as confirmation.
-6. Incorporate confirmed facts into the source CV only when the file can actually be saved and verified.
-7. Present the critical analysis and request **separate permission** to generate an adapted CV.
-8. For generated files, inspect extracted text, layout, links and factual claims before declaring them ready.
+## 2. Prepare inputs / Prepara las entradas
 
-## Limitations / Limitaciones
+For v1.3.0 provide:
 
-The scores are **internal heuristic assessments**, not real employer ATS scores or probabilities of being hired. The six roles are analytical perspectives simulated in one model, not independently running agents. The instruction set does not guarantee model compliance, factual correctness, actual file persistence or ATS compatibility. The operator must verify every external claim and final document.
+| Field | Meaning | Required |
+|---|---|---|
+| `{{CV_MAESTRO}}` | Up-to-date CV text or accessible file / CV maestro | Yes |
+| `{{OFERTA}}` | Full job description or accessible URL / oferta | Yes |
+| `{{IDIOMA_SALIDA}}` | Response language / idioma | Optional |
+| `{{REGION}}` | Market / country, if known / región | Optional |
+| `{{PREFERENCIAS}}` | Confirmed work preferences / preferencias | Optional |
+| `{{EVIDENCIAS_ADICIONALES}}` | Verifiable clarifications / evidencias | Optional |
 
-Los porcentajes son estimaciones internas, no predicciones de contratación. El prompt no garantiza que un modelo cumpla las instrucciones ni que tenga herramientas para navegar, guardar o validar archivos. Toda salida requiere comprobación humana.
+Supply the actual CV and job advertisement as session data. Placeholder labels are not evidence. If browsing is unavailable, **paste the offer text**. Never infer requirements from a broken URL.
 
-## Privacy / Privacidad
+## 3. Minimal fictional example / Ejemplo ficticio
 
-Test with synthetic CVs and fictional job advertisements in public issues and examples. Protect personal data and respect your chosen LLM provider's retention and processing policies.
+```text
+Usa JobMatch AI v1.3.0.
+IDIOMA_SALIDA: Español
+REGION: España
+OFERTA: "Backend: PHP o Go obligatorio; SQL deseable; remoto."
+CV_MAESTRO: "Perfil ficticio con dos años desarrollando API REST en PHP y SQL."
+Primero presenta el análisis; no generes el CV adaptado sin mi aprobación.
+```
+
+## 4. Follow the review / Revisa el análisis
+
+1. Check requirement extraction and whether alternatives (`A or B`) were interpreted correctly.
+2. Inspect the evidence register, uncertain claims and stated exclusions.
+3. Treat professional fit and ATS-document fit as **independent heuristic estimates**.
+4. Answer clarification questions only with verifiable facts.
+5. Decide separately whether to authorize CV adaptation.
+6. Verify the generated document and every factual claim yourself.
+
+## 5. Tool capabilities / Limitaciones técnicas
+
+URL retrieval, editable-file writes, CV export, PDF rendering, text extraction and link validation depend on the assistant's environment. If unavailable, the model must say so. Do not interpret a verbal claim of persistence or file validation as proof.
+
+## 6. Privacy, evaluation and licensing
+
+Avoid exposing real CVs in public code or issue threads. Read [security guidance](SECURITY.md), [methodology](METHODOLOGY.md) and [synthetic examples](../examples/README.md). The examples describe expected behavior, not verified benchmark performance.
+
+Original project prompts and documentation are **CC BY-NC 4.0**; commercial uses not covered by the license require separate permission. See [license](../LICENSE.md) and [commercial terms](../COMMERCIAL-LICENSING.md).
